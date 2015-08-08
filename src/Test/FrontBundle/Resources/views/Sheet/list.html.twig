@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+{% block title %}VideoBrain{% endblock %}
+{% block pageTitle %}{{ 'Collectify SHEETLIST'| upper }}{% endblock %}
+
+{% block body %}
+    <a href="{{ path('test_front_create') }}">Ajouter un sheet</a><br/>
+    <ul>
+        {% for user in sheet %}
+            {{ user.name }} by {{ user.auteur }} / {{ user.type }}-<a href="{{ path('test_front_sheet', {'id' :  user.id  }) }}">Détails</a><br/>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block footer %}
+    {{ include ("TestFrontBundle:Includes:Default/footer.html.twig") }}
+{% endblock %}

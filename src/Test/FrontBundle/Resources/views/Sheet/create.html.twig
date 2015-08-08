@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+{% block title %}VideoBrain{% endblock %}
+{% block pageTitle %}{{ 'Collectify SHEETCREATE'| upper }}{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('test_front_list') }}">Retour à la liste</a><br/>
+
+    {{ form(form) }}
+
+{% endblock %}
+
+{% block footer %}
+    {{ include ("TestFrontBundle:Includes:Default/footer.html.twig") }}
+{% endblock %}

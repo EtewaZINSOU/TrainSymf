@@ -1,0 +1,36 @@
+{% extends "::base.html.twig" %}
+{% block title %}VideoBrain{% endblock %}
+{% block pageTitle %}{{ 'Collectify SHEET'| upper }}{% endblock %}
+
+{% block body %}
+    {{ dump(sheeto) }}
+
+    {{ dump(sheeto.name) }}
+
+    {{ sheeto.name }} <br/>
+    {{ sheeto.type }} <br/>
+    {{ sheeto.auteur }} <br/>
+    {{ sheeto.duration }} <br/>
+    {{ sheeto.released|date }}
+
+    <a href="{{ path('test_front_list') }}">Retour à la liste</a><br/>
+
+
+    {% for t in sheeto %}
+
+        {{ t.name }}
+        {% endfor %}
+            <ul>
+                {% for user in sheeto %}
+                    <li>{{ dump(user.name) }}</li>
+                    <li>{{ user.type }}</li>
+                    <li>{{ user.auteur }}</li>
+                    <li>{{ user.duration }}</li>
+                    <li>{{ user.released |date }}</li>
+                {% endfor %}
+            </ul>
+{% endblock %}
+
+{% block footer %}
+    {{ include ("TestFrontBundle:Includes:Default/footer.html.twig") }}
+{% endblock %}
